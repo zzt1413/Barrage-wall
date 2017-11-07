@@ -15,18 +15,39 @@ $(document).ready(function() {
 	fs.click(function(){
 		var value = $( "#info" ).val();
 	    var wz=$("#wenzi");
-		wz.text(value);
+	    if(value !=""){
+	    	wz.text(value);
+			wz.animate({
+				left: "-230px"
+			}, 10000,function(){
+				wz.empty();
+				wz.animate({left:"100%"});
+			});
+		   }
+	    else {
+	    	alert("请输入内容");
+	    }
+	});
+	document.onkeydown=Enter;
+	function Enter(e){
+		var value = $( "#info" ).val();
+	    var wz=$("#wenzi");
+	 if(e.keyCode == 13&&value != ""){
+	 	wz.text(value);
 		wz.animate({
-			left: "0px"
+			left: "-230px"
 		}, 10000,function(){
 			wz.empty();
-			wz.animate({left:"90%"});
+			wz.animate({left:"100%"});
 		});
-		
-	});
+	 }
+	 else if (e.keyCode == 13&&value == "") {
+	    	alert("请输入内容");
+	    }
+	}
 	qing.click(function(){
 		wz.empty();
-		wz.animate({left:"90%"});
+		wz.animate({left:"100%"});
 	});
 	an.click(function(){
 	    wz.toggle();
