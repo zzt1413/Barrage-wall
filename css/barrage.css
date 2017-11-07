@@ -5,6 +5,7 @@
   margin-left: 10px;
   position: absolute;
   left: 30px;
+  overflow: hidden;
 }
 #info {
   width: 550px;
@@ -13,14 +14,17 @@
   margin-top: 6px;
   font-size: 20px;
 }
-.danmu {
-  position: fixed;
-  left: 0;
-  visibility: hidden;
-  animation: danmu 5s linear 0s 1;
-}
 #wenzi {
+	width: 230px;
+	height: 20px;
 	position: absolute;
+	left: 100%;
+	font-size: 14px;
+	overflow: hidden;
+}
+.textline {
+	position: absolute;
+	text-align: right;
 	left: 90%;
 }
 #xsquyu{
