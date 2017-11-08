@@ -11,18 +11,21 @@ $(document).ready(function() {
 	var qing=$("#qing");
 	var an=$("#div2");
 	var value = $( "#info" ).val();
-	var wz=$("#wenzi");
 	fs.click(function(){
+		var txt=document.createElement("div");   
+	    txt.className="txtl";
+	    var wall=document.getElementById("danmuqiang");
+	    wall.appendChild(txt);	
+	    var wz=$(".txtl");
 		var value = $( "#info" ).val();
-	    var wz=$("#wenzi");
 	    if(value !=""){
 	    	wz.text(value);
 			wz.animate({
 				left: "-230px"
 			}, 10000,function(){
-				wz.empty();
-				wz.animate({left:"100%"});
+				wz.remove();
 			});
+			$("#info").val("");
 		   }
 	    else {
 	    	alert("请输入内容");
@@ -46,10 +49,11 @@ $(document).ready(function() {
 	    }
 	}
 	qing.click(function(){
-		wz.empty();
-		wz.animate({left:"100%"});
+		var wz=$(".txtl");
+		wz.remove();
 	});
 	an.click(function(){
+		var wz=$(".txtl");
 	    wz.toggle();
 	});
 })
